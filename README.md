@@ -1,171 +1,137 @@
-# calculadora-multifuncional
-calculadora multifuncional passada em grupo.
+# Desafio - Monitoramento de Temperatura
 
-Objetivo:
+## 1. Identificação
 
-Desenvolver uma calculadora multifuncional utilizando o Flowgorithm, permitindo ao usuário escolher diferentes operações matemáticas por meio de um menu. O programa foi estruturado para executar uma operação, apresentar o resultado de forma clara e organizada e retornar automaticamente ao menu inicial até que o usuário escolha a opção de encerramento.
+- **Aluno:** Matheus Lima
+- **Disciplina:** Programação em C
+- **Professora:** Profa. Karla Sartin
+- **Título:** Sistema de Monitoramento de Temperatura
 
-Integrantes do Grupo:
+## 2. Objetivo
 
-- Integrante 1: Matheus De lima Braz
-- Integrante 2: João Pedro Guimarães de Lima Cruvinel
-- Integrante 3: Lucas Eduardo Sousa Silva
-- Integrante 4: Paulo Victor Oliveira Dos Santos
+O projeto tem como objetivo desenvolver um programa em linguagem C capaz de monitorar uma sequência de temperaturas, comparando cada leitura com um limite definido pelo usuário. O sistema registra as leituras e apresenta um relatório final com média, maior temperatura, menor temperatura, quantidade de leituras, quantidade de temperaturas acima do limite e percentual acima do limite.
 
-Descrição das 10 Funções
+O monitoramento é encerrado automaticamente quando são registradas **três temperaturas consecutivas acima do limite**.
 
-O programa possui 10 funções/operações matemáticas principais:
+## 3. Funcionamento do programa
 
-1. **Soma**  
-   Recebe dois números e calcula a soma entre eles.
+### Definição do limite
 
-2. **Subtração**  
-   Recebe dois números e calcula a diferença entre o primeiro e o segundo.
+Primeiro, o usuário informa o limite de temperatura. O programa considera válidos valores entre **-100,0 e 100,0 graus**.
 
-3. **Multiplicação**  
-   Recebe dois números e calcula o produto entre eles.
+### Realização das leituras
 
-4. **Divisão**  
-   Recebe dois números e realiza a divisão do primeiro pelo segundo. O programa verifica se o segundo número é diferente de zero antes de realizar a operação.
+Depois de definir o limite, o programa solicita uma temperatura por vez. A cada leitura são atualizados os dados necessários para o relatório final.
 
-5. **Potência**  
-   Recebe uma base e um expoente e calcula a potência correspondente.
+### Tratamento de valores inválidos
 
-6. **Raiz quadrada**  
-   Recebe um número e calcula sua raiz quadrada. O programa verifica se o número é maior ou igual a zero para evitar uma raiz quadrada de número negativo no conjunto dos números reais.
+O programa verifica se o usuário digitou realmente um número e se a temperatura está dentro do intervalo de -100,0 a 100,0 graus. Caso contrário, uma mensagem de erro é apresentada e a entrada é solicitada novamente.
 
-7. **Média**  
-   Recebe três números e calcula a média aritmética entre eles.
+### Identificação de temperaturas acima do limite
 
-8. **Porcentagem**  
-   Recebe uma porcentagem e um valor e calcula quanto essa porcentagem representa do valor informado.
+Uma temperatura é considerada acima do limite quando:
 
-9. **Área do círculo**  
-   Recebe o raio do círculo e calcula sua área utilizando a fórmula:
-
-   `Área = π × raio²`
-
-10. **Conversão de Celsius para Fahrenheit**  
-    Recebe uma temperatura em Celsius e realiza a conversão para Fahrenheit utilizando a fórmula:
-
-    `F = (C × 9 / 5) + 32`
-
-** a opção 11 do menu  é uma função para encerrar o programa.
-
-## Lógica de Funcionamento do Programa
-
-Ao iniciar, o programa cria e inicializa as variáveis necessárias e define a opção inicial como `0`.
-
-Em seguida, é executado um **While**, cuja condição é manter o programa funcionando enquanto a opção escolhida for diferente de `11`.
-
-A cada repetição:
-
-1. O menu da calculadora é exibido.
-2. O usuário escolhe uma opção de `1` a `11`.
-3. O programa verifica a opção escolhida por meio de estruturas de decisão.
-4. Quando uma operação é selecionada, o programa solicita os valores necessários.
-5. A operação matemática é realizada.
-6. O resultado é armazenado na variável `resultado`.
-7. O resultado é exibido de maneira clara e organizada.
-8. O programa retorna ao menu inicial.
-9. Esse processo continua até o usuário selecionar a opção `11`.
-10. Ao selecionar `11`, o programa informa que foi encerrado e o `While` termina.
-
-Caso o usuário digite uma opção que não exista no menu, o programa apresenta a mensagem **"opcao invalida!"** e retorna ao menu.
-
-## Estruturas Utilizadas
-
-### While
-
-A estrutura **While** é utilizada para manter a calculadora em funcionamento e fazer com que o menu seja exibido novamente após cada operação.
-
-A condição utilizada é equivalente a:
-
-`opcao != 11`
-
-Assim, o programa continua repetindo enquanto a opção escolhida não for 11.
-
-### Decisões
-
-O programa utiliza estruturas **If/Else** para identificar a opção escolhida pelo usuário.
-
-Cada opção do menu é verificada individualmente, permitindo executar a operação correspondente.
-
-Também existem decisões para tratar situações específicas:
-
-- divisão por zero;
-- raiz quadrada de número negativo;
-- opção inválida;
-- encerramento do programa.
-
-### Variáveis
-
-As principais variáveis utilizadas são:
-
-- **opcao** — armazena a opção escolhida no menu.
-- **num1** — armazena o primeiro valor ou o valor principal utilizado em várias operações.
-- **num2** — armazena o segundo valor quando necessário.
-- **num3** — armazena o terceiro valor utilizado no cálculo da média.
-- **resultado** — armazena o resultado das operações matemáticas.
-
-As variáveis numéricas utilizadas para os cálculos são do tipo **Real**, enquanto `opcao` é do tipo **Integer**.
-
-### Entrada de dados
-
-A estrutura **Input** é utilizada para receber os valores digitados pelo usuário.
-
-### Saída de dados
-
-A estrutura **Output** é utilizada para apresentar o menu, solicitar informações e mostrar mensagens e resultados.
-
-Os resultados são apresentados em um bloco organizado, facilitando a leitura pelo usuário.
-
-### Atribuição
-
-A estrutura **Assign** é utilizada para realizar cálculos e armazenar os valores nas variáveis.
-
-## Ferramenta Utilizada
-
-O projeto foi desenvolvido utilizando o **Flowgorithm**, uma ferramenta de criação e execução de fluxogramas que permite representar visualmente a lógica de um programa.
-
-O arquivo principal do projeto possui extensão:
-
-` .fprg `
-
-## Instruções para Execução
-
-1. Instale e abra o **Flowgorithm** no computador.
-2. Abra o arquivo da calculadora com extensão `.fprg`.
-3. Execute o fluxograma utilizando a opção de execução do Flowgorithm.
-4. O menu da calculadora será apresentado.
-5. Digite o número correspondente à operação desejada.
-6. Informe os valores solicitados.
-7. O resultado será apresentado de forma clara e organizada.
-8. Após o resultado, a calculadora retornará automaticamente ao menu inicial.
-9. Para encerrar o programa, escolha a opção **11 - Encerrar**.
-
-## Menu do Programa
-
-```text
-Calculadora Multifuncional
-
-1. Soma
-2. Subtração
-3. Multiplicação
-4. Divisão
-5. Potência
-6. Raiz quadrada
-7. Média
-8. Porcentagem
-9. Área do círculo
-10. Celsius para Fahrenheit
-11. Encerrar
+```c
+temperatura > limite
 ```
 
-## Tratamento de Erros
+Quando isso acontece, a quantidade de temperaturas acima do limite é incrementada.
 
-A calculadora possui algumas verificações para evitar resultados inválidos:
+### Contagem de temperaturas consecutivas
 
-- Na divisão, o programa verifica se o divisor é diferente de zero.
-- Na raiz quadrada, o programa verifica se o número é maior ou igual a zero.
-- Se o usuário escolher uma opção que não esteja entre as opções disponíveis, o programa informa que a opção é inválida e retorna ao menu.
+O programa utiliza a variável `consecutivas` para contar quantas temperaturas seguidas ficaram acima do limite.
+
+- Se a temperatura estiver acima do limite, o contador aumenta em 1.
+- Se a temperatura estiver dentro ou igual ao limite, o contador volta para 0.
+- Quando o contador chega a 3, o monitoramento é encerrado.
+
+### Condição de encerramento
+
+O laço principal continua enquanto o contador de temperaturas consecutivas for menor que 3:
+
+```c
+while (consecutivas < 3)
+```
+
+Portanto, o programa termina automaticamente após três temperaturas consecutivas acima do limite.
+
+## 4. Estruturas de repetição utilizadas
+
+### `while`
+
+O `while` foi utilizado no monitoramento principal:
+
+```c
+while (consecutivas < 3)
+```
+
+Ele permite que novas temperaturas sejam lidas repetidamente enquanto a condição de encerramento ainda não foi atingida.
+
+### `do...while`
+
+O `do...while` foi utilizado na função `lerTemperatura()` para validar as entradas. A leitura precisa acontecer pelo menos uma vez antes de a condição de validade ser verificada. Se o usuário informar um valor inválido, a estrutura repete a solicitação.
+
+Dessa forma, o projeto utiliza uma combinação de `while` e `do...while`, cada um em uma parte adequada do algoritmo.
+
+## 5. Como executar
+
+### Compilar
+
+No terminal, dentro da pasta do projeto, execute:
+
+```bash
+gcc monitoramento.c -o monitoramento
+```
+
+### Executar no Linux/macOS
+
+```bash
+./monitoramento
+```
+
+### Executar no Windows
+
+```bash
+monitoramento.exe
+```
+
+## 6. Testes realizados
+
+### Teste 1 - Validação de entradas inválidas
+
+Foi informado texto no lugar de um número e também uma temperatura fora do intervalo permitido. O programa apresentou mensagens de entrada inválida e solicitou novamente os valores, sem encerrar o monitoramento.
+
+**Resultado:** teste aprovado.
+
+### Teste 2 - Temperaturas acima do limite, porém não consecutivas
+
+Foi utilizado limite de 30 graus e uma sequência contendo temperaturas acima do limite intercaladas com temperaturas dentro do limite. Quando uma temperatura ficou dentro ou igual ao limite, o contador de consecutivas foi reiniciado.
+
+**Resultado:** o programa não encerrou até que ocorresse a sequência de três valores acima do limite. Teste aprovado.
+
+### Teste 3 - Três temperaturas consecutivas acima do limite
+
+Foi utilizado limite de 30 graus e, em determinado momento, foram informadas três temperaturas consecutivas acima do limite. Na terceira ocorrência consecutiva, o programa encerrou automaticamente e apresentou o relatório final.
+
+**Resultado:** encerramento automático correto. Teste aprovado.
+
+As evidências dos testes estão na pasta `evidencias/`.
+
+## 7. Organização do projeto
+
+```text
+desafio-monitoramento/
+│
+├── monitoramento.c
+├── README.md
+└── evidencias/
+    ├── teste01.png
+    ├── teste02.png
+    └── teste03.png
+```
+
+## 8. Reflexão final
+
+Escolhi utilizar `while` no monitoramento porque a quantidade de temperaturas não é conhecida antecipadamente: o programa deve continuar lendo valores até que aconteça a condição de encerramento, que é ter três temperaturas consecutivas acima do limite.
+
+Também utilizei `do...while` na validação das entradas porque nesse caso a leitura precisa acontecer antes da verificação da condição. A diferença foi importante porque o usuário precisa informar um valor pelo menos uma vez e, se o valor for inválido, a estrutura permite repetir a solicitação até que uma entrada válida seja informada.
